@@ -19,6 +19,6 @@ Fork this repository and send us a pull request. We'll review it and get back to
 
 ## Main steps
 
-[ ] Fill the Gulpfile
+- [ ] Fill the Gulpfile
 
 Contact us at jobs@aircall.io if you need more details.
