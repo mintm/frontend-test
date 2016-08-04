@@ -37,7 +37,10 @@ Use the dependency you want to fetch data: `$http`, `$resource`...
 
 ## Installation
 
-You're smart, right? So you don't need any instruction.
+You're smart, right? So you shouldn't need any instruction :)
+
+
+Didn't succeed to install it on your own? Don't waste 20min more, there you go:
 
 ```
 npm install
