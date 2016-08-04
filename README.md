@@ -34,6 +34,7 @@ In this repository you'll find a simple AngularJS project with three controllers
 
 Use the dependency you want to fetch data: `$http`, `$resource`...
 
+BTW, we have used [ui-router](https://github.com/angular-ui/ui-router). Hope you know how to use it!
 
 ## Installation
 
