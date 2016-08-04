@@ -8,14 +8,13 @@
     "type": "git",
     "url": "https://github.com/aircall/frontend-test"
   },
+  "license": "MIT",
   "dependencies": {
     "express": "4.14.*"
   },
-  "private": true,
-  "license": "MIT",
   "devDependencies": {
     "gulp": "3.9.*",
-    "gulp-concat": "^2.6.0",
+    "gulp-concat": "2.6.*",
     "gulp-live-server": "0.0.*"
   }
 }
