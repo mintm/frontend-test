@@ -19,6 +19,10 @@ Show us what you can do in a max of 6 hours :) Don't spend too much time on desi
 **Bonus:** the final user should be able to archive a call. The call will not be displayed anymore on the Activity Feed. Please code that only if you have free time.
 
 
+To give you an idea, here what our app looks like:
+
+![app](https://cloud.githubusercontent.com/assets/630714/17402260/9aa2f7fe-5a52-11e6-9a15-e37c9ad9ed8e.png)
+
 
 ## Code
 
