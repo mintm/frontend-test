@@ -35,6 +35,14 @@ In this repository you'll find a simple AngularJS project with three controllers
 Use the dependency you want to fetch data: `$http`, `$resource`...
 
 
+## Installation
+
+You're smart, right? So you don't need any instruction.
+
+```
+npm install
+gulp
+```
 
 ## API documentation
 
