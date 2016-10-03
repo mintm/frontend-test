@@ -1,6 +1,6 @@
 # [aircall.io](https://aircall.io) - Frontend technical test
 
-This test is a part of our hiring process at Aircall for [frontend positions](https://aircall.io/jobs#FrontendDeveloper). It should take you between 3 and 6 hours depending on your experience.
+This test is a part of our hiring process at Aircall for [frontend positions](https://aircall.workable.com/jobs/112458). It should take you between 3 and 6 hours depending on your experience.
 
 **Feel free to apply! Drop us a line with your LinkedIn/GitHub/Twitter/AnySocialProfileWhereYouAreActive at jobs@aircall.io**
 
