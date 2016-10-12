@@ -21,8 +21,7 @@ Show us what you can do in 6 hours top :) Don't spend too much time on designing
 
 To give you an idea, here what our app looks like:
 
-![app](https://cloud.githubusercontent.com/assets/630714/17402260/9aa2f7fe-5a52-11e6-9a15-e37c9ad9ed8e.png)
-
+![app](https://cloud.githubusercontent.com/assets/630714/19327140/c96a4022-90cd-11e6-9b13-54b54b47e73a.png)
 
 ## Code
 
