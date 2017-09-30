@@ -1,16 +1,10 @@
 {
   "name": "frontend-test",
-  "version": "1.0.0",
-  "description": "Display the activity feed",
-  "author": "Tech team <jobs@aircall.io>",
-  "main": "main.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/aircall/frontend-test"
-  },
-  "license": "MIT",
+  "version": "1.0.1",
+  "private": true,
+  "engine": "6.11.3",
   "dependencies": {
-    "express": "4.14.*"
+    "express": "4.16.*"
   },
   "devDependencies": {
     "gulp": "3.9.*",

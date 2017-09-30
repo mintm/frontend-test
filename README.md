@@ -1,87 +1,37 @@
-# [aircall.io](https://aircall.io) - Frontend technical test
+# Aircall.io application skeleton
 
-This test is a part of our hiring process at Aircall for [frontend positions](https://app.trinethire.com/companies/4567-aircall-io-inc/jobs/4331-front-end-developer). It should take you between 3 and 6 hours depending on your experience.
+## About
+Here is an application skeleton using [aircall.io](https://aircall.io) test API.
 
-**Feel free to apply! Drop us a line with your LinkedIn/GitHub/Twitter/AnySocialProfileWhereYouAreActive at jobs@aircall.io**
+## Todo
+- [X] (tech) As a developer, I want to install and run the application on local
+  - [X] Update and stick packages
+  - [X] Add install and run commands
+- [X] (tech) As a team, we want to write and to push some codes
+   - [X] Create GitHub repository
+   - [X] Define code conventions
+   - [X] Release v1.0.1
 
+## Requirements
+- [Node.js](https://nodejs.org/) (see the recommended version in the package.json, tips: use [nvm](https://github.com/creationix/nvm))
+- [npm](https://nodejs.org/) (the latest available version is recommended)
 
+## commands
 
-## Summary
-
-The goal of this test is to make you code a small AngularJS app. We have prepared a skeleton app for you, but please change whatever you want (Gulpfile, CSS files, HTML structure, JS structure...).
-
-The app will have two different pages:
-- **Activity Feed** - simple list of calls
-- **Activity Detail** - detail of a call
-
-Show us what you can do in 6 hours top :) Don't spend too much time on designing your app, our design team will hate it anyway.
-
-**Bonus:** the final user should be able to archive a call. The call will no longer be displayed on the Activity Feed. Please code that only if you have extra time.
-
-
-To give you an idea, here what our app looks like:
-
-
-![app](https://user-images.githubusercontent.com/630714/29357034-763d7216-8276-11e7-8bcb-e77d9645dfcc.png)
-
-## Code
-
-In this repository you'll find a simple AngularJS project with three controllers and one model:
-
-- **AppController** - the main controller. You won't have to do anything in this one.
-- **ActivitiesController** - the Activity Feed controller. Handles the call list.
-- **ActivityDetailController** - the Activity Detail. Handles a specific call actions. Archiving a call can be done here.
-
-Use the dependency you want to fetch data: `$http`, `$resource`...
-
-BTW, we have used [ui-router](https://github.com/angular-ui/ui-router). Hope you know how to use it!
-
-## Installation
-
-You're smart, right? So you shouldn't need any instruction :)
-
-
-Didn't succeed to install it on your own? Don't waste 20min more, there you go:
-
-```
-npm install
-gulp
+### Install
+```sh
+make install
 ```
 
-## API documentation
+### Tests
+```sh
+make test
 
-### Routes
-
-Here is the API address: https://aircall-job.herokuapp.com.
-
-As you can see, it's hosted on a free Heroku server, which means that the first time you will fetch the API, it will take few seconds to answer.
-
-- **GET** - https://aircall-job.herokuapp.com/activities: get calls to display in the Activity Feed
-- **GET** - https://aircall-job.herokuapp.com/activities/:id: retrieve a specific call details
-- **POST** - https://aircall-job.herokuapp.com/activities/:id: update a call. The only field updatable is `is_archived (bool)`. You'll need to send a JSON in the request body:
 ```
-{
-  is_archived: true
-}
+
+### Run
+```sh
+make start
 ```
-- **GET** - https://aircall-job.herokuapp.com/reset: Reset all calls to initial state (usefull if you archived all calls).
 
-### Call object
-
-- **id** - unique ID of call
-- **created_at** - creation date
-- **direction** - `inbound` or `outbound` call
-- **from** - caller's number
-- **to** - callee's number
-- **via** - Aircall number used for the call
-- **duration** - duration of a call (in seconds)
-- **is_archived** - call is archived or not
-- **call_type** - can be a `missed`, `answered` or `voicemail` call.
-
-
-
-## Submission
-
-Fork this repository and send us a pull request. We'll review it and get back to you in order to talk about your code!
-
-Contact us at jobs@aircall.io if you need more details.
+Open [http://localhost:8081/](http://localhost:8081/) in a browser
