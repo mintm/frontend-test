@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Exit when a command return another value than 0
+set -e
+
+make pre-push

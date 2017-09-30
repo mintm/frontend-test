@@ -3,10 +3,18 @@
 
   angular
   .module('angular-ac')
-  .controller('ActivitiesController', ['Call',
-  function(Call) {
+  .controller('ActivitiesController', [
+    'Call',
+    function(Call) {
     console.info('[ActivitiesController] init');
-    // TODO: retrieve all calls here
+
+    let activities = this;
+    activities.calls = [];
+
+    Call.getList().then(function(result) {
+        activities.calls = result.data;
+    });
+
   }]);
 
 })();

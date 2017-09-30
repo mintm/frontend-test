@@ -1,17 +1,17 @@
 (function() {
   'use strict';
 
+  const AIRCALL_TEST_API_BASE_URL = 'https://aircall-job.herokuapp.com';
+
   angular
   .module('angular-ac')
   .factory('Call', [
-    function() {
-      var _call = {};
+    '$http',
+    function($http) {
+      let _call = {};
 
-      // Get call list from the server
       _call.getList = function() {
-        // TODO: fetch the call list here
-
-        return [];
+        return $http.get(AIRCALL_TEST_API_BASE_URL + '/activities');
       };
 
       return _call;

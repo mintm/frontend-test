@@ -1,3 +1,7 @@
-<div class="activities" data-ng-controller="ActivitiesController">
-  There should be a list of calls here
+<div class="activities" data-ng-controller="ActivitiesController as activitiesCtrl">
+  <ul>
+    <li data-ng-repeat="call in activitiesCtrl.calls">
+        {{call.from}}
+    </li>
+  </ul>
 </div>

@@ -12,7 +12,7 @@ Here is an application skeleton using [aircall.io](https://aircall.io) test API.
   - [X] Define code conventions
   - [X] Release v1.0.1
 - [ ] As an user, I want to see the list of calls
-  - [ ] Fetch data using the API
+  - [X] Fetch data using the API
   - [ ] Display the list
   - [ ] Show a loader during fetch
   - [ ] Show an error if API call failed
@@ -41,7 +41,7 @@ make install
 
 ### Tests
 ```sh
-make test
+make unit
 
 ```
 

@@ -44,6 +44,8 @@ gulp.task('css:watch', function () {
 */
 gulp.task('js:compile', function () {
   return gulp.src([
+    './node_modules/angular/angular.min.js',
+    './node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
     jsPath + 'app.js',
     jsPath + '**/*.js'
   ])
