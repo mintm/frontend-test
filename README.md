@@ -8,9 +8,25 @@ Here is an application skeleton using [aircall.io](https://aircall.io) test API.
   - [X] Update and stick packages
   - [X] Add install and run commands
 - [X] (tech) As a team, we want to write and to push some codes
-   - [X] Create GitHub repository
-   - [X] Define code conventions
-   - [X] Release v1.0.1
+  - [X] Create GitHub repository
+  - [X] Define code conventions
+  - [X] Release v1.0.1
+- [ ] As an user, I want to see the list of calls
+  - [ ] Fetch data using the API
+  - [ ] Display the list
+  - [ ] Show a loader during fetch
+  - [ ] Show an error if API call failed
+- [ ] As an user, I want to see details of a call
+  - [ ] Fetch data using the API
+  - [ ] Display the list
+  - [ ] Show a loader during fetch
+  - [ ] Show an error if API call failed
+- [ ] As an user, I want to archive a call
+  - [ ] Call API to archive a call
+  - [ ] Call API to reset the list of calls
+  - [ ] Show success messages
+  - [ ] Show an error if API call failed
+- [ ] As an user, I want to use the application online
 
 ## Requirements
 - [Node.js](https://nodejs.org/) (see the recommended version in the package.json, tips: use [nvm](https://github.com/creationix/nvm))
