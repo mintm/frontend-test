@@ -2,8 +2,8 @@
   'use strict';
 
   angular
-    .module('angular-ac', [
-      'ui.router'
-    ]);
+  .module('angular-ac', [
+    'ui.router'
+  ]);
 
 })();

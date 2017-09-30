@@ -1,9 +1,9 @@
 /**
-  Main node.js server file
+Main node.js server file
 */
 
 var express = require('express'),
-        app = express();
+app = express();
 
 // Serve statics files
 app.use(express.static(__dirname + '/public'));

@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('angular-ac')
-    .controller('AppController', [
-      function() {
-        console.info('[AppController] init');
-      }
-    ]);
-
+  .module('angular-ac')
+  .controller('AppController', [
+    function() {
+      console.info('[AppController] init');
+    }
+  ]);
+  
 })();

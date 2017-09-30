@@ -2,20 +2,20 @@
   'use strict';
 
   angular
-    .module('angular-ac')
-    .factory('Call', [
-      function() {
-        var _call = {};
+  .module('angular-ac')
+  .factory('Call', [
+    function() {
+      var _call = {};
 
-        // Get call list from the server
-        _call.getList = function() {
-          // TODO: fetch the call list here
+      // Get call list from the server
+      _call.getList = function() {
+        // TODO: fetch the call list here
 
-          return [];
-        };
+        return [];
+      };
 
-        return _call;
-      }
-    ]);
+      return _call;
+    }
+  ]);
 
 })();
