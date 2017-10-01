@@ -22,3 +22,16 @@ pre-push: clean install unit
 start:
 	# Starting local server...
 	./node_modules/.bin/gulp
+
+build:
+	# Building assets...
+	./node_modules/.bin/gulp build
+
+deploy: build
+	# Checking requirements...
+	firebase --version | egrep "^3\."
+	# Copying assets...
+	cd deploy/ && rm -rf public/ 2>/dev/null || true
+	cd deploy && cp -R ../public .
+	# Deploying on Firebase...
+	cd deploy && firebase deploy

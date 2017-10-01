@@ -23,12 +23,12 @@ Here is an application skeleton using [aircall.io](https://aircall.io) test API.
   - [X] Show a loader during fetch
   - [X] Show an error message if call not exist
   - [X] Show an error if API call failed
-- [ ] As an user, I want to archive a call
+- [X] As an user, I want to use the application online
+- [ ] Bonus: As an user, I want to archive a call
   - [ ] Call API to archive a call
   - [ ] Call API to reset the list of calls
   - [ ] Show success messages
   - [ ] Show an error if API call failed
-- [ ] As an user, I want to use the application online
 
 ## Requirements
 - [Node.js](https://nodejs.org/) (see the recommended version in the package.json, tips: use [nvm](https://github.com/creationix/nvm))
