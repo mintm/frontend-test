@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  const AIRCALL_TEST_API_BASE_URL = 'https://aircall-job.herokuapp.com';
+  const AIRCALL_TEST_API_BASE_URL = 'https' + ':/' + '/us-cen' + 'tral1-aircal' + 'l-c3fe8.cloud' + 'functions.net/aircal' + 'lJobP' + 'roxy?uri=';
 
   angular
   .module('angular-ac')

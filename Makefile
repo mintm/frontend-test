@@ -32,6 +32,9 @@ deploy: build
 	firebase --version | egrep "^3\."
 	# Copying assets...
 	cd deploy/ && rm -rf public/ 2>/dev/null || true
-	cd deploy && cp -R ../public .
+	cd deploy/ && cp -R ../public .
+	# Installing npm dependencies...
+	cd deploy/functions/ && rm -rf node_modules/ 2>/dev/null || true
+	cd deploy/functions/ && npm install
 	# Deploying on Firebase...
-	cd deploy && firebase deploy
+	cd deploy/ && firebase deploy

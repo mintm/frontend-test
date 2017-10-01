@@ -8,14 +8,18 @@ var jsPath = './app/js/';
 var htmlPath = './app/views/';
 
 gulp.task('html:compile', function () {
-  return gulp.src([
-    htmlPath + 'index.html',
+  gulp.src([
     htmlPath + 'components/loader.html',
     htmlPath + 'components/reload.html',
     htmlPath + 'activities.html',
     htmlPath + 'activity_detail.html'
   ])
   .pipe(gulp.dest('public/views'));
+
+  gulp.src([
+    htmlPath + 'index.html',
+  ])
+  .pipe(gulp.dest('public'))
 });
 
 gulp.task('html:watch', function () {

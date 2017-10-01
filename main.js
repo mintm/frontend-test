@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 
 // Default
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/app/views/index.html');
+  res.sendFile(__dirname + '/app/index.html');
 });
 
 var port = 8081;

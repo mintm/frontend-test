@@ -1,0 +1,10 @@
+{
+  "name": "aircall-job-proxy",
+  "description": "Hack for bypassing aircall-job CORS allow-origin",
+  "dependencies": {
+    "cors": "2.8.*",
+    "firebase-admin": "5.3.*",
+    "firebase-functions": "0.6.*",
+    "request": "2.83.*"
+  }
+}
