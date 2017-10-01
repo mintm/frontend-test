@@ -16,7 +16,7 @@ describe('the Call model', function() {
   describe('getList() method', function () {
 
     it('should exit', function () {
-      // When
+      // Then
       expect(Call.getList).to.exist;
       expect(Call.getList).to.be.an('function');
     });
@@ -55,7 +55,7 @@ describe('the Call model', function() {
   describe('groupListByDay() method', function () {
 
     it('should exit', function () {
-      // When
+      // Then
       expect(Call.groupListByDay).to.exist;
       expect(Call.groupListByDay).to.be.an('function');
     });
@@ -161,6 +161,45 @@ describe('the Call model', function() {
       expect(result[0].calls.length).to.equal(2);
       expect(result[0].calls[0].id).to.equal(200);
       expect(result[0].calls[1].id).to.equal(100);
+    });
+
+  });
+
+  describe('getDetail() method', function () {
+
+    it('should exit', function () {
+      // Then
+      expect(Call.getDetail).to.exist;
+      expect(Call.getDetail).to.be.an('function');
+    });
+
+    it('should call the API', function (done) {
+      // Given
+      $http.get = function(url) {
+        expect(url).to.exist;
+        expect(url).to.be.a('string');
+
+        done();
+      };
+
+      // When
+      Call.getDetail();
+    });
+
+    it('should return the API call', function () {
+      // Given
+
+      const OUT = 'Promise here';
+
+      $http.get = function() {
+        return OUT;
+      };
+
+      // When
+      const result = Call.getDetail();
+
+      // Then
+      expect(result).to.equal(OUT);
     });
 
   });

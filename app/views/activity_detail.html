@@ -1,3 +1,56 @@
-<div class="activity_detail" data-ng-controller="ActivityDetailController">
-  This should be a call detail
+<div class="activity-detail" data-ng-controller="ActivityDetailController as activityDetailCtrl">
+
+  <div class="screen-loading-container" data-ng-show="activityDetailCtrl.isLoading()">
+    <loader></loader>
+  </div>
+
+  <div class="screen-error-container" data-ng-show="activityDetailCtrl.isError()">
+    <span>An error occured</span>
+    <reload></reload>
+  </div>
+
+  <div class="screen-non-empty-list-container" data-ng-show="activityDetailCtrl.isFetchedItem()">
+    <span class="screen-title">Activity detail</span>
+    <a class="screen-back" ui-sref="activities()">&laquo; back</a>
+
+    <div class="card">
+
+      <p>
+        <span class="label">&nbsp;</span>
+        <strong class="value">
+          <span class="icon" ng-show="activityDetailCtrl.isOutboundCall()">↗️</span>
+          <span class="icon" ng-hide="activityDetailCtrl.isOutboundCall()">↘️</span>
+        </strong>
+      </p>
+      <p>
+        <span class="label">Date</span>
+        <strong class="value">{{activityDetailCtrl.detail.created_at | date:'medium'}}</strong>
+      </p>
+      <p>
+        <span class="label">Duration</span>
+        <strong class="value">{{activityDetailCtrl.detail.duration}} seconds</strong>
+      </p>
+      <p>
+        <span class="label">Type</span>
+        <strong class="value">{{activityDetailCtrl.detail.call_type}}</strong>
+      </p>
+      <p>
+        <span class="label">From</span>
+        <strong class="value">{{activityDetailCtrl.detail.from}}</strong>
+      </p>
+      <!-- 7830 has no "to" -->
+      <p data-ng-show="activityDetailCtrl.detail.to">
+        <span class="label">To</span>
+        <strong class="value">{{activityDetailCtrl.detail.to}}</strong>
+      </p>
+      <p>
+        <span class="label">Via</span>
+        <strong class="value">{{activityDetailCtrl.detail.via}}</strong>
+      </p>
+
+      <div class="clear"></div>
+    </div>
+
+  </div>
+
 </div>

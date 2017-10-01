@@ -34,7 +34,8 @@ gulp.task('html:watch', function () {
 gulp.task('css:compile', function () {
   return gulp.src([
     cssPath + 'main.css',
-    cssPath + 'activities.css'
+    cssPath + 'activities.css',
+    cssPath + 'activity_detail.css'
   ])
   .pipe(concat('style.css'))
   .pipe(gulp.dest('public/css'));

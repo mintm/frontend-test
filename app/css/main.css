@@ -8,10 +8,10 @@ html, body, h1, h2, h3, ul, li, p {
 }
 
 body {
-  background: #000000;
+  background: #000;
   font-family: helvetica, arial, sans-serif;
   font-size: 13px;
-  color: #333333;
+  color: #333;
   line-height: 1;
 }
 
@@ -34,13 +34,22 @@ body:after {
 ul {
   list-style-type: none;
 }
+
+* {
+  outline: none;
+}
+
+.clear {
+  clear: both;
+}
+
 .container {
   position: fixed;
-  width: 360px; height: 600px;
+  width: 360px; height: 700px;
   z-index: 100;
 
   top: 50%; left: 50%;
-  margin-top: -300px;
+  margin-top: -350px;
   margin-left: -180px;
 
   background: white;
@@ -63,6 +72,43 @@ header svg {
 
 .container-view {
   position: relative;
-  height: 460px;
+  height: 560px;
   overflow: auto;
+}
+
+.screen-title {
+  display: block;
+  padding-top: 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  color: #999;
+}
+
+.screen-back {
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 35px;
+  color: #bbb;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.screen-loading-container {
+  display: block;
+  padding-top: 130px;
+  text-align: center;
+}
+
+.screen-empty-list-container,
+.screen-error-container {
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.screen-empty-list-container span,
+.screen-error-container span {
+  display: block;
+  padding-bottom: 10px;
 }

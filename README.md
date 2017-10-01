@@ -17,12 +17,12 @@ Here is an application skeleton using [aircall.io](https://aircall.io) test API.
   - [X] Show a loader during fetch
   - [X] Show an empty message if no call
   - [X] Show an error if API call failed
-- [ ] As an user, I want to see details of a call
-  - [ ] Fetch data using the API
-  - [ ] Display the list
-  - [ ] Show a loader during fetch
-  - [ ] Show an error message if call not exist
-  - [ ] Show an error if API call failed
+- [X] As an user, I want to see details of a call
+  - [X] Fetch data using the API
+  - [X] Display the list
+  - [X] Show a loader during fetch
+  - [X] Show an error message if call not exist
+  - [X] Show an error if API call failed
 - [ ] As an user, I want to archive a call
   - [ ] Call API to archive a call
   - [ ] Call API to reset the list of calls

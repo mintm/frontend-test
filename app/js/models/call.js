@@ -49,6 +49,10 @@
           return result;
         };
 
+        _call.getDetail = function(callId) {
+          return $http.get(AIRCALL_TEST_API_BASE_URL + '/activities/' + callId);
+        };
+
         return _call;
     }
 

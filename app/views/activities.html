@@ -1,21 +1,21 @@
-<div class="activities state" data-ng-controller="ActivitiesController as activitiesCtrl">
+<div class="activities" data-ng-controller="ActivitiesController as activitiesCtrl">
 
-  <div class="loading-container" data-ng-show="activitiesCtrl.isLoading()">
+  <div class="screen-loading-container" data-ng-show="activitiesCtrl.isLoading()">
     <loader></loader>
   </div>
 
-  <div class="empty-list-container" data-ng-show="activitiesCtrl.isEmptyList()">
+  <div class="screen-empty-list-container" data-ng-show="activitiesCtrl.isEmptyList()">
     <span>No call for the moment</span>
     <reload></reload>
   </div>
 
-  <div class="error-container" data-ng-show="activitiesCtrl.isError()">
+  <div class="screen-error-container" data-ng-show="activitiesCtrl.isError()">
     <span>An error occured</span>
     <reload></reload>
   </div>
 
-  <div class="non-empty-list-container" data-ng-show="activitiesCtrl.isNonEmptyList()">
-    <span class="title">Activities</span>
+  <div class="screen-non-empty-list-container" data-ng-show="activitiesCtrl.isNonEmptyList()">
+    <span class="screen-title">Activities</span>
 
     <ul>
       <li class="group" data-ng-repeat="group in activitiesCtrl.callsByDay">
@@ -23,17 +23,18 @@
 
         <ul>
           <li class="call" data-ng-repeat="call in group.calls">
+            <a class="to-detail" ui-sref="activity_detail({ id: call.id })">
+              <span class="icon" ng-show="activitiesCtrl.isOutboundCall(call)">↗️</span>
+              <span class="icon" ng-hide="activitiesCtrl.isOutboundCall(call)">↘️</span>
 
-            <span class="icon" ng-show="activitiesCtrl.isOutboundCall(call)">↗️</span>
-            <span class="icon" ng-hide="activitiesCtrl.isOutboundCall(call)">↘️</span>
+              <div class="body">
+                <span class="time">{{call.created_at | date:'HH:mm'}}</span>
 
-            <div class="body">
-              <span class="time">{{call.created_at | date:'HH:mm'}}</span>
+                <span class="number">{{activitiesCtrl.getCallNumber(call)}}</span>
 
-              <span class="number">{{activitiesCtrl.getCallNumber(call)}}</span>
-
-              <span class="via">via <em>{{call.via}}</em></span>
-            </div>
+                <span class="via">via <em>{{call.via}}</em></span>
+              </div>
+            </a>
           </li>
         </ul>
       </li>
