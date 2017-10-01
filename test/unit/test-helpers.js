@@ -23,7 +23,6 @@ require('@uirouter/angularjs');
 // Expose for mocha tests
 global.ngInject = window.angular.mock.inject;
 global.ngModule = window.angular.mock.module;
-global.spy = require('sinon').spy;
 global.expect = require('chai').expect;
 
 // Load all JS from app/ folder

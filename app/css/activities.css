@@ -1,0 +1,89 @@
+.activities .loading-container {
+  display: block;
+  padding-top: 130px;
+  text-align: center;
+}
+
+.activities .empty-list-container,
+.activities .error-container {
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.activities .empty-list-container span,
+.activities .error-container span {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.activities .title {
+  display: block;
+  padding-top: 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  color: #999;
+}
+
+.activities .group {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.activities .day {
+  display: block;
+  font-size: 13px;
+  text-align: center;
+  color: #999;
+}
+
+.activities .call {
+  margin-top: 10px;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.activities .icon {
+  display: block;
+  float: left;
+  font-size: 28px;
+  color: #999;
+  padding-right: 10px;
+}
+
+.activities .number {
+  display: block;
+  font-size: 15px;
+}
+
+.activities .via {
+  display: block;
+  color: #888;
+  padding-top: 2px;
+}
+
+.activities .via em {
+  color: #666;
+  font-style: normal;
+}
+
+.activities .time {
+  display: block;
+  float: right;
+  color: #999;
+  padding-top: 8px;
+}
+
+.state-empty-list .empty-list-container,
+.state-error .error-container {
+  text-align: center;
+}
+
+.state-empty-list .empty-list-container span,
+.state-error .error-container span {
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}

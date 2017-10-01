@@ -11,15 +11,17 @@ Here is an application skeleton using [aircall.io](https://aircall.io) test API.
   - [X] Create GitHub repository
   - [X] Define code conventions
   - [X] Release v1.0.1
-- [ ] As an user, I want to see the list of calls
+- [X] As an user, I want to see the list of calls
   - [X] Fetch data using the API
-  - [ ] Display the list
-  - [ ] Show a loader during fetch
-  - [ ] Show an error if API call failed
+  - [X] Display the list
+  - [X] Show a loader during fetch
+  - [X] Show an empty message if no call
+  - [X] Show an error if API call failed
 - [ ] As an user, I want to see details of a call
   - [ ] Fetch data using the API
   - [ ] Display the list
   - [ ] Show a loader during fetch
+  - [ ] Show an error message if call not exist
   - [ ] Show an error if API call failed
 - [ ] As an user, I want to archive a call
   - [ ] Call API to archive a call

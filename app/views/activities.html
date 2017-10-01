@@ -1,7 +1,43 @@
-<div class="activities" data-ng-controller="ActivitiesController as activitiesCtrl">
-  <ul>
-    <li data-ng-repeat="call in activitiesCtrl.calls">
-        {{call.from}}
-    </li>
-  </ul>
+<div class="activities state" data-ng-controller="ActivitiesController as activitiesCtrl">
+
+  <div class="loading-container" data-ng-show="activitiesCtrl.isLoading()">
+    <loader></loader>
+  </div>
+
+  <div class="empty-list-container" data-ng-show="activitiesCtrl.isEmptyList()">
+    <span>No call for the moment</span>
+    <reload></reload>
+  </div>
+
+  <div class="error-container" data-ng-show="activitiesCtrl.isError()">
+    <span>An error occured</span>
+    <reload></reload>
+  </div>
+
+  <div class="non-empty-list-container" data-ng-show="activitiesCtrl.isNonEmptyList()">
+    <span class="title">Activities</span>
+
+    <ul>
+      <li class="group" data-ng-repeat="group in activitiesCtrl.callsByDay">
+        <span class="day">{{group.day | date:'fullDate'}}</span>
+
+        <ul>
+          <li class="call" data-ng-repeat="call in group.calls">
+
+            <span class="icon" ng-show="activitiesCtrl.isOutboundCall(call)">↗️</span>
+            <span class="icon" ng-hide="activitiesCtrl.isOutboundCall(call)">↘️</span>
+
+            <div class="body">
+              <span class="time">{{call.created_at | date:'HH:mm'}}</span>
+
+              <span class="number">{{activitiesCtrl.getCallNumber(call)}}</span>
+
+              <span class="via">via <em>{{call.via}}</em></span>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
 </div>

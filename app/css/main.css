@@ -1,4 +1,4 @@
-html, body, h1, h2, h3, ul, li {
+html, body, h1, h2, h3, ul, li, p {
   margin: 0;
   padding: 0;
   border: 0;
@@ -14,13 +14,15 @@ body {
   color: #333333;
   line-height: 1;
 }
+
 body:before {
   content: '';
   position: absolute;
-  background-image: url('http://www.gstatic.com/prettyearth/assets/full/1014.jpg');
+  background-image: url('https://www.gstatic.com/prettyearth/assets/full/1014.jpg');
   background-size: cover;
   top: 0; left: 0; right: 0; bottom: 0;
 }
+
 body:after {
   content: '';
   position: absolute;
@@ -29,6 +31,9 @@ body:after {
   z-index: 10;
 }
 
+ul {
+  list-style-type: none;
+}
 .container {
   position: fixed;
   width: 360px; height: 600px;
@@ -48,8 +53,9 @@ header {
   margin: 0 auto;
   padding: 20px 0;
   text-align: center;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0 #ccc;
 }
+
 header svg {
   display: block;
   width: 100%; height: 100%;
@@ -58,14 +64,5 @@ header svg {
 .container-view {
   position: relative;
   height: 460px;
-  padding: 20px;
   overflow: auto;
-}
-
-.container-view .activities {
-  // TODO: I know you want to make something beautiful here
-}
-
-.container-view .activity-detail {
-  // TODO: I know you want to make something beautiful here
 }

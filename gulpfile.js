@@ -15,6 +15,8 @@ var htmlPath = './app/views/';
 */
 gulp.task('html:compile', function () {
   return gulp.src([
+    htmlPath + 'components/loader.html',
+    htmlPath + 'components/reload.html',
     htmlPath + 'activities.html',
     htmlPath + 'activity_detail.html'
   ])
@@ -30,7 +32,11 @@ gulp.task('html:watch', function () {
 * CSS methods
 */
 gulp.task('css:compile', function () {
-  return gulp.src(cssPath + 'style.css')
+  return gulp.src([
+    cssPath + 'main.css',
+    cssPath + 'activities.css'
+  ])
+  .pipe(concat('style.css'))
   .pipe(gulp.dest('public/css'));
 });
 gulp.task('css:watch', function () {
