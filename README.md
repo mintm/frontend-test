@@ -26,15 +26,16 @@ Here is an application skeleton using [aircall.io](https://aircall.io) test API.
 - [X] As an user, I want to use the application online
 - [ ] Bonus: As an user, I want to archive a call
   - [ ] Call API to archive a call
+  - [ ] Show an archive button
   - [ ] Call API to reset the list of calls
-  - [ ] Show success messages
+  - [ ] Show a reset button
   - [ ] Show an error if API call failed
 
 ## Requirements
 - [Node.js](https://nodejs.org/) (see the recommended version in the package.json, tips: use [nvm](https://github.com/creationix/nvm))
 - [npm](https://nodejs.org/) (the latest available version is recommended)
 
-## commands
+## Commands
 
 ### Install
 ```sh
