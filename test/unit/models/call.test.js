@@ -1,29 +1,29 @@
 require('../test-helpers');
 
-describe('the Call model', function() {
+describe('the Call model', () => {
   let Call,
   $http;
 
-  beforeEach(function () {
+  beforeEach(() => {
     ngModule('angular-ac');
 
-    ngInject(function (_Call_, _$http_) {
+    ngInject((_Call_, _$http_) => {
       Call = _Call_;
       $http = _$http_;
     })
   });
 
-  describe('getList() method', function () {
+  describe('getList() method', () => {
 
-    it('should exit', function () {
+    it('should exit', () => {
       // Then
       expect(Call.getList).to.exist;
       expect(Call.getList).to.be.an('function');
     });
 
-    it('should call the API', function (done) {
+    it('should call the API', (done) => {
       // Given
-      $http.get = function(url) {
+      $http.get = (url) => {
         expect(url).to.exist;
         expect(url).to.be.a('string');
 
@@ -34,12 +34,12 @@ describe('the Call model', function() {
       Call.getList();
     });
 
-    it('should return the API call', function () {
+    it('should return the API call', () => {
       // Given
 
       const OUT = 'Promise here';
 
-      $http.get = function() {
+      $http.get = () => {
         return OUT;
       };
 
@@ -52,16 +52,16 @@ describe('the Call model', function() {
 
   });
 
-  describe('groupListByDay() method', function () {
+  describe('groupListByDay() method', () => {
 
-    it('should exit', function () {
+    it('should exit', () => {
       // Then
       expect(Call.groupListByDay).to.exist;
       expect(Call.groupListByDay).to.be.an('function');
     });
 
-    describe('empty list', function() {
-      it('shoud return empty groups', function() {
+    describe('empty list', () => {
+      it('shoud return empty groups', () => {
         // When
         const result = Call.groupListByDay([]);
 
@@ -71,9 +71,9 @@ describe('the Call model', function() {
       });
     });
 
-    describe('with data', function() {
+    describe('with data', () => {
 
-      it('shoud return data', function() {
+      it('shoud return data', () => {
         // Given
 
         const FIRST_ID = 100;
@@ -99,7 +99,7 @@ describe('the Call model', function() {
         expect(result[0].calls[0].created_at).to.equal(FIRST_CREATED_AT_FULL);
       });
 
-      it('shoud group by day', function() {
+      it('shoud group by day', () => {
         // Given
         const CALLS = [{
           id: 300,
@@ -132,7 +132,7 @@ describe('the Call model', function() {
 
     });
 
-    it('shoud group by day with timezone', function() {
+    it('shoud group by day with timezone', () => {
       // Given
 
       const CALLS = [{
@@ -165,17 +165,17 @@ describe('the Call model', function() {
 
   });
 
-  describe('getDetail() method', function () {
+  describe('getDetail() method', () => {
 
-    it('should exit', function () {
+    it('should exit', () => {
       // Then
       expect(Call.getDetail).to.exist;
       expect(Call.getDetail).to.be.an('function');
     });
 
-    it('should call the API', function (done) {
+    it('should call the API', (done) => {
       // Given
-      $http.get = function(url) {
+      $http.get = (url) => {
         expect(url).to.exist;
         expect(url).to.be.a('string');
 
@@ -186,12 +186,12 @@ describe('the Call model', function() {
       Call.getDetail();
     });
 
-    it('should return the API call', function () {
+    it('should return the API call', () => {
       // Given
 
       const OUT = 'Promise here';
 
-      $http.get = function() {
+      $http.get = () => {
         return OUT;
       };
 

@@ -1,13 +1,13 @@
 require('../test-helpers');
 
-describe('the ActivityDetailController controller', function() {
+describe('the ActivityDetailController controller', () => {
   let $controller,
   $stateParams;
 
-  beforeEach(function () {
+  beforeEach(() => {
     ngModule('angular-ac');
 
-    ngInject(function(_$controller_) {
+    ngInject((_$controller_) => {
       $controller = _$controller_;
     });
 
@@ -16,16 +16,16 @@ describe('the ActivityDetailController controller', function() {
     };
   });
 
-  describe('initial', function () {
+  describe('initial', () => {
 
-    it('should state equal to "loading"', function () {
+    it('should state equal to "loading"', () => {
       // Given
       const Call = {
-        getDetail: function() {
+        getDetail: () => {
           return {
-            then: function() {
+            then: () => {
               return {
-                catch: function() {}
+                catch: () => {}
               }
             }
           }
@@ -40,14 +40,14 @@ describe('the ActivityDetailController controller', function() {
       expect(activityDetailCtrl.state).to.equal('loading');
     });
 
-    it('should having empty detail', function () {
+    it('should having empty detail', () => {
       // Given
       const Call = {
-        getDetail: function() {
+        getDetail: () => {
           return {
-            then: function() {
+            then: () => {
               return {
-                catch: function() {}
+                catch: () => {}
               }
             }
           }
@@ -62,20 +62,20 @@ describe('the ActivityDetailController controller', function() {
     });
   });
 
-  describe('fetched data', function () {
+  describe('fetched data', () => {
 
-    it('should state equal to "fetched"', function () {
+    it('should state equal to "fetched"', () => {
       // Given
       const Call = {
-        getDetail: function() {
+        getDetail: () => {
           return {
-            then: function(callback) {
+            then: (callback) => {
               callback({
                 data: []
               });
 
               return {
-                catch: function() {}
+                catch: () => {}
               };
             }
           }
@@ -90,7 +90,7 @@ describe('the ActivityDetailController controller', function() {
       expect(activityDetailCtrl.state).to.equal('fetched');
     });
 
-    it('should populate detail', function () {
+    it('should populate detail', () => {
       // Given
 
       const EXPECTED_CALL_DETAIL = [{
@@ -98,15 +98,15 @@ describe('the ActivityDetailController controller', function() {
       }];
 
       const Call = {
-        getDetail: function() {
+        getDetail: () => {
           return {
-            then: function(callback) {
+            then: (callback) => {
               callback({
                 data: EXPECTED_CALL_DETAIL
               });
 
               return {
-                catch: function() {}
+                catch: () => {}
               };
             }
           }
@@ -122,16 +122,16 @@ describe('the ActivityDetailController controller', function() {
     });
   });
 
-  describe('fetched failed', function () {
+  describe('fetched failed', () => {
 
-    it('should state equal to "error"', function () {
+    it('should state equal to "error"', () => {
       // Given
       const Call = {
-        getDetail: function() {
+        getDetail: () => {
           return {
-            then: function() {
+            then: () => {
               return {
-                catch: function(callback) {
+                catch: (callback) => {
                   callback();
                 }
               };

@@ -7,7 +7,7 @@ var cssPath = './app/css/';
 var jsPath = './app/js/';
 var htmlPath = './app/views/';
 
-gulp.task('html:compile', function () {
+gulp.task('html:compile', () => {
   gulp.src([
     htmlPath + 'components/loader.html',
     htmlPath + 'components/reload.html',
@@ -22,11 +22,11 @@ gulp.task('html:compile', function () {
   .pipe(gulp.dest('public'))
 });
 
-gulp.task('html:watch', function () {
+gulp.task('html:watch', () => {
   gulp.watch(htmlPath + '**/*.html', ['html:compile']);
 });
 
-gulp.task('css:compile', function () {
+gulp.task('css:compile', () => {
   return gulp.src([
     cssPath + 'main.css',
     cssPath + 'activities.css',
@@ -36,11 +36,11 @@ gulp.task('css:compile', function () {
   .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('css:watch', function () {
+gulp.task('css:watch', () => {
   gulp.watch(cssPath + '**/*.css', ['css:compile']);
 });
 
-gulp.task('js:compile', function () {
+gulp.task('js:compile', () => {
   return gulp.src([
     './node_modules/angular/angular.min.js',
     './node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
@@ -51,15 +51,15 @@ gulp.task('js:compile', function () {
   .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('js:watch', function () {
+gulp.task('js:watch', () => {
   gulp.watch(jsPath + '**/*.js', ['js:compile']);
 });
 
-gulp.task('server', function() {
+gulp.task('server', () => {
   server = gls.new('main.js');
   server.start();
 
-  gulp.watch('main.js', function() {
+  gulp.watch('main.js', () => {
     server.start.bind(server)()
   });
 });

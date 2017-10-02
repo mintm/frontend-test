@@ -28,7 +28,7 @@ global.expect = require('chai').expect;
 // Load all JS from app/ folder
 const glob = require('glob'),
 path = require('path');
-glob.sync('./app/js/**/*.js' ).forEach(function(file) {
+glob.sync('./app/js/**/*.js' ).forEach((file) => {
   // "file" is relative to the root of the project
   // We need the absolute path to the file from the /
   require(path.resolve(file));

@@ -1,26 +1,26 @@
 require('../test-helpers');
 
-describe('the ActivitiesController controller', function() {
+describe('the ActivitiesController controller', () => {
   let $controller;
 
-  beforeEach(function () {
+  beforeEach(() => {
     ngModule('angular-ac');
 
-    ngInject(function(_$controller_) {
+    ngInject((_$controller_) => {
       $controller = _$controller_;
     });
   });
 
-  describe('initial', function () {
+  describe('initial', () => {
 
-    it('should state equal to "loading"', function () {
+    it('should state equal to "loading"', () => {
       // Given
       const Call = {
-        getList: function() {
+        getList: () => {
           return {
-            then: function() {
+            then: () => {
               return {
-                catch: function() {}
+                catch: () => {}
               }
             }
           }
@@ -35,14 +35,14 @@ describe('the ActivitiesController controller', function() {
       expect(activitiesCtrl.state).to.equal('loading');
     });
 
-    it('should having empty call list', function () {
+    it('should having empty call list', () => {
       // Given
       const Call = {
-        getList: function() {
+        getList: () => {
           return {
-            then: function() {
+            then: () => {
               return {
-                catch: function() {}
+                catch: () => {}
               }
             }
           }
@@ -58,25 +58,25 @@ describe('the ActivitiesController controller', function() {
     });
   });
 
-  describe('fetched data', function () {
+  describe('fetched data', () => {
 
-    it('should state equal to "fetched"', function () {
+    it('should state equal to "fetched"', () => {
       // Given
       const Call = {
-        getList: function() {
+        getList: () => {
           return {
-            then: function(callback) {
+            then: (callback) => {
               callback({
                 data: []
               });
 
               return {
-                catch: function() {}
+                catch: () => {}
               };
             }
           }
         },
-        groupListByDay: function(data) {
+        groupListByDay: (data) => {
           return [];
         }
       };
@@ -89,7 +89,7 @@ describe('the ActivitiesController controller', function() {
       expect(activitiesCtrl.state).to.equal('fetched');
     });
 
-    it('should group by day', function (done) {
+    it('should group by day', (done) => {
       // Given
 
       const CALLS = [{
@@ -97,20 +97,20 @@ describe('the ActivitiesController controller', function() {
       }];
 
       const Call = {
-        getList: function() {
+        getList: () => {
           return {
-            then: function(callback) {
+            then: (callback) => {
               callback({
                 data: CALLS
               });
 
               return {
-                catch: function() {}
+                catch: () => {}
               };
             }
           }
         },
-        groupListByDay: function(data) {
+        groupListByDay: (data) => {
           expect(data).to.exist;
           expect(data).to.deep.equal(CALLS);
 
@@ -124,7 +124,7 @@ describe('the ActivitiesController controller', function() {
       const activitiesCtrl = $controller('ActivitiesController', { Call: Call });
     });
 
-    it('should populate grouped list', function () {
+    it('should populate grouped list', () => {
       // Given
 
       const EXPECTED_CALLS_BY_DAY = [{
@@ -132,20 +132,20 @@ describe('the ActivitiesController controller', function() {
       }];
 
       const Call = {
-        getList: function() {
+        getList: () => {
           return {
-            then: function(callback) {
+            then: (callback) => {
               callback({
                 data: []
               });
 
               return {
-                catch: function() {}
+                catch: () => {}
               };
             }
           }
         },
-        groupListByDay: function(data) {
+        groupListByDay: (data) => {
           return EXPECTED_CALLS_BY_DAY;
         }
       };
@@ -159,16 +159,16 @@ describe('the ActivitiesController controller', function() {
     });
   });
 
-  describe('fetched failed', function () {
+  describe('fetched failed', () => {
 
-    it('should state equal to "error"', function () {
+    it('should state equal to "error"', () => {
       // Given
       const Call = {
-        getList: function() {
+        getList: () => {
           return {
-            then: function() {
+            then: () => {
               return {
-                catch: function(callback) {
+                catch: (callback) => {
                   callback();
                 }
               };
