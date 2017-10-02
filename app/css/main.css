@@ -7,9 +7,19 @@ html, body, h1, h2, h3, ul, li, p {
   vertical-align: baseline;
 }
 
+@font-face {
+  font-family: 'Mark';
+  src: url('https://cdn.aircall.io/fonts/33182D_1_0.eot');
+  src:  url('https://cdn.aircall.io/fonts/33182D_1_0.woff2') format('woff2'), 
+        url('https://cdn.aircall.io/fonts/33182D_1_0.woff') format('woff'),
+        url('https://cdn.aircall.io/fonts/33182D_1_0.ttf') format('truetype'),
+        url('https://cdn.aircall.io/fonts/33182D_1_0.svg#wf') format('svg'),
+        url('https://cdn.aircall.io/fonts/33182D_1_0.eot?#iefix') format('embedded-opentype');
+}
+
 body {
   background: #000;
-  font-family: helvetica, arial, sans-serif;
+  font-family: 'Mark', Helvetica, sans-serif;
   font-size: 13px;
   color: #333;
   line-height: 1;
