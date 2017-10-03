@@ -34,7 +34,10 @@
     };
 
     this.toggleArchiveStatus = function() {
-      Call.setDetail($stateParams.id, activity.detail).catch(function() {
+      Call.setDetail($stateParams.id, activity.detail).then(function() {
+        // TODO: Be sticky to the master backend when back to the list
+        // QUESTION: Show success message?  
+      }).catch(function() {
         // TODO: Make better error display
         activity.state = 'error';
       });

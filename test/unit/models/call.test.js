@@ -13,6 +13,45 @@ describe('the Call model', () => {
     })
   });
 
+  describe('reset() method', () => {
+
+    it('should exit', () => {
+      // Then
+      expect(Call.reset).to.exist;
+      expect(Call.reset).to.be.an('function');
+    });
+
+    it('should call the API', (done) => {
+      // Given
+      $http.get = (url) => {
+        expect(url).to.exist;
+        expect(url).to.be.a('string');
+
+        done();
+      };
+
+      // When
+      Call.reset();
+    });
+
+    it('should return the API call', () => {
+      // Given
+
+      const OUT = 'Promise here';
+
+      $http.get = () => {
+        return OUT;
+      };
+
+      // When
+      const result = Call.reset();
+
+      // Then
+      expect(result).to.equal(OUT);
+    });
+
+  });
+
   describe('getList() method', () => {
 
     it('should exit', () => {

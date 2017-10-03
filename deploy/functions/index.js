@@ -14,7 +14,10 @@ exports.aircallJobProxy = functions.https.onRequest((req, res) => {
     }
 
     request[req.method.toLowerCase()]('https://aircall-job.herokuapp.com' + req.query.uri, (err, response, body) => {
-      return res.status(err ? 500 : 200).json(JSON.parse(body));
+      if (err) {
+        return res.status(500).json({err: err});
+      }
+      return res.status(response.statusCode).json(JSON.parse(body));
     });
   });
 });

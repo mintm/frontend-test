@@ -30,8 +30,8 @@ Here is an application skeleton using [aircall.io](https://aircall.io) test API.
   - [ ] Archive a call work
     - [ ] Request to @aircall.io: Always filter is_archived from the list
     - [ ] Question to @aircall.io: Due to replication delay, is there a way to sticky to the master backend?
-  - [ ] Call API to reset all archived called
-  - [ ] Show a button to reset all archived calls
+  - [X] Call API to reset all archived called
+  - [X] Show a button to reset all archived calls
   - [ ] Reset all archived calls work
 
 ## Requirements

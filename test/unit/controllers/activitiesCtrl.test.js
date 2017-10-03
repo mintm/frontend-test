@@ -193,4 +193,94 @@ describe('the ActivitiesController controller', () => {
 
   });
 
+  describe('reset() method', () => {
+    let Call = {};
+
+    beforeEach(() => {
+      Call = {
+        getList: () => {
+          return {
+            // TODO: Use AngularJS promise here
+            then: (callback) => {
+              callback({
+                data: {}
+              });
+
+              return {
+                catch: () => {}
+              };
+            }
+          }
+        },
+        groupListByDay: () => {}
+      };
+    });
+
+    it('should exit', () => {
+      // When
+      const activitiesCtrl = $controller('ActivitiesController', { Call: Call });
+
+      // Then
+      expect(activitiesCtrl.reset).to.exist;
+      expect(activitiesCtrl.reset).to.be.an('function');
+    });
+
+    it('should call the API', (done) => {
+      // Given
+
+      Call.reset = () => {
+
+        done();
+
+        return {
+          // TODO: Use AngularJS promise here
+          then: (callback) => {
+            callback({
+              data: {}
+            });
+
+            return {
+              catch: () => {}
+            };
+          }
+        }
+      }
+
+      const activitiesCtrl = $controller('ActivitiesController', { Call: Call });
+
+      // When
+      activitiesCtrl.reset();
+    });
+
+    describe('set detail failed', () => {
+
+      it('should state equal to "error"', () => {
+        // Given
+        Call.reset = () => {
+          return {
+            // TODO: Use AngularJS promise here
+            then: () => {
+              return {
+                catch: (callback) => {
+                  callback();
+                }
+              };
+            }
+          }
+        };
+
+        const activitiesCtrl = $controller('ActivitiesController', { Call: Call });
+
+        // When
+        activitiesCtrl.reset();
+
+        // Then
+        expect(activitiesCtrl.state).to.exist;
+        expect(activitiesCtrl.state).to.equal('error');
+      });
+
+    });
+
+  });
+
 });

@@ -42,6 +42,16 @@
         return call.direction === 'outbound' ? call.to : call.from;
     };
 
+    this.reset = function() {
+      Call.reset().then(function() {
+        // TODO: Refetch but be sticky to the master backend
+        // QUESTION: Show success message?
+      }).catch(function() {
+        // TODO: Make better error display
+        activities.state = 'error';
+      });
+    };
+
   }]);
 
 })();

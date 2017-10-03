@@ -236,8 +236,12 @@ describe('the ActivityDetailController controller', () => {
         Call.setDetail = () => {
           return {
             // TODO: Use AngularJS promise here
-            catch: (callback) => {
-              callback();
+            then: () => {
+              return {
+                catch: (callback) => {
+                  callback();
+                }
+              };
             }
           }
         };

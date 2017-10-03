@@ -70,3 +70,9 @@
   padding-top: 30px;
   padding-bottom: 10px;
 }
+
+.reset-button-container {
+  text-align: right;
+  padding-top: 45px;
+  padding-right: 20px;
+}

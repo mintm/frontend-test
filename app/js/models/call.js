@@ -10,11 +10,16 @@
     function($http) {
       let _call = {};
 
+      _call.reset = function() {
+        return $http.get(AIRCALL_TEST_API_BASE_URL + '/reset');
+      };
+
       _call.getList = function() {
         return $http.get(AIRCALL_TEST_API_BASE_URL + '/activities');
       };
 
       // Group a fetched list of call by call
+      // TODO: Move to a helper file
       _call.groupListByDay = function(calls) {
           let result = [];
 
