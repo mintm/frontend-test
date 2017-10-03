@@ -22,6 +22,7 @@ describe('the ActivityDetailController controller', () => {
       // Given
       const Call = {
         getDetail: () => {
+          // TODO: Use AngularJS promise here
           return {
             then: () => {
               return {
@@ -44,6 +45,7 @@ describe('the ActivityDetailController controller', () => {
       // Given
       const Call = {
         getDetail: () => {
+          // TODO: Use AngularJS promise here
           return {
             then: () => {
               return {
@@ -67,8 +69,11 @@ describe('the ActivityDetailController controller', () => {
     it('should state equal to "fetched"', () => {
       // Given
       const Call = {
-        getDetail: () => {
+        getDetail: (callId) => {
+          expect(callId).to.equal($stateParams.id);
+
           return {
+            // TODO: Use AngularJS promise here
             then: (callback) => {
               callback({
                 data: []
@@ -98,8 +103,11 @@ describe('the ActivityDetailController controller', () => {
       }];
 
       const Call = {
-        getDetail: () => {
+        getDetail: (callId) => {
+          expect(callId).to.equal($stateParams.id);
+
           return {
+            // TODO: Use AngularJS promise here
             then: (callback) => {
               callback({
                 data: EXPECTED_CALL_DETAIL
@@ -127,8 +135,11 @@ describe('the ActivityDetailController controller', () => {
     it('should state equal to "error"', () => {
       // Given
       const Call = {
-        getDetail: () => {
+        getDetail: (callId) => {
+          expect(callId).to.equal($stateParams.id);
+
           return {
+            // TODO: Use AngularJS promise here
             then: () => {
               return {
                 catch: (callback) => {
@@ -146,6 +157,101 @@ describe('the ActivityDetailController controller', () => {
       // Then
       expect(activityDetailCtrl.state).to.exist;
       expect(activityDetailCtrl.state).to.equal('error');
+    });
+
+  });
+
+  describe('toggleArchiveStatus() method', () => {
+    let Call = {};
+
+    beforeEach(() => {
+      Call = {
+        getDetail: () => {
+          return {
+            // TODO: Use AngularJS promise here
+            then: (callback) => {
+              callback({
+                data: {
+                  is_archived: false
+                }
+              });
+
+              return {
+                catch: () => {}
+              };
+            }
+          }
+        }
+      };
+    });
+
+    it('should exit', () => {
+      // When
+      const activityDetailCtrl = $controller('ActivityDetailController', { $stateParams: $stateParams, Call: Call });
+
+      // Then
+      expect(activityDetailCtrl.toggleArchiveStatus).to.exist;
+      expect(activityDetailCtrl.toggleArchiveStatus).to.be.an('function');
+    });
+
+    it('should call the API', (done) => {
+      // Given
+
+      const NEW_IS_ARCHIVED_VALUE = 'new_value';
+
+      Call.setDetail = (callId, detail) => {
+        expect(callId).to.equal($stateParams.id);
+        expect(detail.is_archived).to.equal(NEW_IS_ARCHIVED_VALUE);
+
+        done();
+
+        return {
+          // TODO: Use AngularJS promise here
+          then: (callback) => {
+            callback({
+              data: {
+                is_archived: true
+              }
+            });
+
+            return {
+              catch: () => {}
+            };
+          }
+        }
+      }
+
+      const activityDetailCtrl = $controller('ActivityDetailController', { $stateParams: $stateParams, Call: Call });
+
+      activityDetailCtrl.detail.is_archived = NEW_IS_ARCHIVED_VALUE;
+
+      // When
+      activityDetailCtrl.toggleArchiveStatus();
+    });
+
+    describe('set detail failed', () => {
+
+      it('should state equal to "error"', () => {
+        // Given
+        Call.setDetail = () => {
+          return {
+            // TODO: Use AngularJS promise here
+            catch: (callback) => {
+              callback();
+            }
+          }
+        };
+
+        const activityDetailCtrl = $controller('ActivityDetailController', { $stateParams: $stateParams, Call: Call });
+
+        // When
+        activityDetailCtrl.toggleArchiveStatus();
+
+        // Then
+        expect(activityDetailCtrl.state).to.exist;
+        expect(activityDetailCtrl.state).to.equal('error');
+      });
+
     });
 
   });

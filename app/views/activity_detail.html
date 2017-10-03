@@ -47,6 +47,14 @@
         <span class="label">Via</span>
         <strong class="value">{{activityDetailCtrl.detail.via}}</strong>
       </p>
+      <p>
+        <span class="label">&nbsp;</span>
+        <strong class="value">
+          <label class="archive-label">
+            <input type="checkbox" ng-model="activityDetailCtrl.detail.is_archived" ng-click="activityDetailCtrl.toggleArchiveStatus()" /> Archived
+          </label>
+        </strong>
+      </p>
 
       <div class="clear"></div>
     </div>

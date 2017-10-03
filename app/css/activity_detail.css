@@ -16,6 +16,8 @@
 .activity-detail .card .icon {
   font-size: 32px;
   color: #999;
+  position: relative;
+  left: -4px;
 }
 
 .activity-detail .card p {
@@ -34,4 +36,14 @@
   display: table-cell;
   width: 70%;
   font-weight: normal;
+}
+
+.activity-detail .archive-label {
+  position: relative;
+  left: -4px;
+}
+
+.activity-detail .archive-label input {
+    position: relative;
+    top: 4px;
 }

@@ -166,6 +166,7 @@ describe('the Call model', () => {
   });
 
   describe('getDetail() method', () => {
+    const CALL_ID = 42;
 
     it('should exit', () => {
       // Then
@@ -183,7 +184,7 @@ describe('the Call model', () => {
       };
 
       // When
-      Call.getDetail();
+      Call.getDetail(CALL_ID);
     });
 
     it('should return the API call', () => {
@@ -196,7 +197,54 @@ describe('the Call model', () => {
       };
 
       // When
-      const result = Call.getDetail();
+      const result = Call.getDetail(CALL_ID);
+
+      // Then
+      expect(result).to.equal(OUT);
+    });
+
+  });
+
+  describe('setDetail() method', () => {
+    const CALL_ID = 42;
+
+    it('should exit', () => {
+      // Then
+      expect(Call.setDetail).to.exist;
+      expect(Call.setDetail).to.be.an('function');
+    });
+
+    it('should call the API', (done) => {
+      // Given
+
+      const DETAIL = {
+        a: 'b'
+      };
+
+      $http.post = (url, detail) => {
+        expect(url).to.exist;
+        expect(url).to.be.a('string');
+
+        expect(detail).to.deep.equal(DETAIL);
+
+        done();
+      };
+
+      // When
+      Call.setDetail(CALL_ID, DETAIL);
+    });
+
+    it('should return the API call', () => {
+      // Given
+
+      const OUT = 'Promise here';
+
+      $http.post = () => {
+        return OUT;
+      };
+
+      // When
+      const result = Call.setDetail(CALL_ID, {});
 
       // Then
       expect(result).to.equal(OUT);

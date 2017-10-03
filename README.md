@@ -25,11 +25,14 @@ Here is an application skeleton using [aircall.io](https://aircall.io) test API.
   - [X] Show an error if API call failed
 - [X] As an user, I want to use the application online
 - [ ] Bonus: As an user, I want to archive a call
-  - [ ] Call API to archive a call
-  - [ ] Show an archive button
-  - [ ] Call API to reset the list of calls
-  - [ ] Show a reset button
-  - [ ] Show an error if API call failed
+  - [X] Call API to archive a call
+  - [X] Show a toggle to archive a call
+  - [ ] Archive a call work
+    - [ ] Request to @aircall.io: Always filter is_archived from the list
+    - [ ] Question to @aircall.io: Due to replication delay, is there a way to sticky to the master backend?
+  - [ ] Call API to reset all archived called
+  - [ ] Show a button to reset all archived calls
+  - [ ] Reset all archived calls work
 
 ## Requirements
 - [Node.js](https://nodejs.org/) (see the recommended version in the package.json, tips: use [nvm](https://github.com/creationix/nvm))

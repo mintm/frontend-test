@@ -53,6 +53,10 @@
           return $http.get(AIRCALL_TEST_API_BASE_URL + '/activities/' + callId);
         };
 
+        _call.setDetail = function(callId, detail) {
+          return $http.post(AIRCALL_TEST_API_BASE_URL + '/activities/' + callId, detail);
+        };
+
         return _call;
     }
 

@@ -33,6 +33,13 @@
       return activity.detail.direction === 'outbound';
     };
 
+    this.toggleArchiveStatus = function() {
+      Call.setDetail($stateParams.id, activity.detail).catch(function() {
+        // TODO: Make better error display
+        activity.state = 'error';
+      });
+    };
+
   }]);
 
 })();

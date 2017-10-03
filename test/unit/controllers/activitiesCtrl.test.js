@@ -18,6 +18,7 @@ describe('the ActivitiesController controller', () => {
       const Call = {
         getList: () => {
           return {
+            // TODO: Use AngularJS promise here
             then: () => {
               return {
                 catch: () => {}
@@ -40,6 +41,7 @@ describe('the ActivitiesController controller', () => {
       const Call = {
         getList: () => {
           return {
+            // TODO: Use AngularJS promise here
             then: () => {
               return {
                 catch: () => {}
@@ -65,6 +67,7 @@ describe('the ActivitiesController controller', () => {
       const Call = {
         getList: () => {
           return {
+            // TODO: Use AngularJS promise here
             then: (callback) => {
               callback({
                 data: []
@@ -99,6 +102,7 @@ describe('the ActivitiesController controller', () => {
       const Call = {
         getList: () => {
           return {
+            // TODO: Use AngularJS promise here
             then: (callback) => {
               callback({
                 data: CALLS
@@ -134,6 +138,7 @@ describe('the ActivitiesController controller', () => {
       const Call = {
         getList: () => {
           return {
+            // TODO: Use AngularJS promise here
             then: (callback) => {
               callback({
                 data: []
@@ -166,6 +171,7 @@ describe('the ActivitiesController controller', () => {
       const Call = {
         getList: () => {
           return {
+            // TODO: Use AngularJS promise here
             then: () => {
               return {
                 catch: (callback) => {
