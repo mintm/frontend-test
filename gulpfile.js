@@ -10,7 +10,11 @@ var htmlPath = './app/views/';
 gulp.task('html:compile', () => {
   gulp.src([
     htmlPath + 'components/loader.html',
-    htmlPath + 'components/reload.html',
+    htmlPath + 'components/reload_button.html'
+  ])
+  .pipe(gulp.dest('public/views/components'));
+
+  gulp.src([
     htmlPath + 'activities.html',
     htmlPath + 'activity_detail.html'
   ])

@@ -6,7 +6,7 @@
   .directive('loader', function() {
     return {
         restrict : 'E',
-        templateUrl : 'views/loader.html'
+        templateUrl : 'views/components/loader.html'
     };
   });
 

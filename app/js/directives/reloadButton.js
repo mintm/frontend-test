@@ -6,7 +6,7 @@
   .directive('reload', function() {
     return {
         restrict : 'E',
-        templateUrl : 'views/reload.html'
+        templateUrl : 'views/components/reload_button.html'
     };
   });
 
